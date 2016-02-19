@@ -23,12 +23,12 @@ $(function() {
 
         // Test that loops through each feed in the allFeeds object and ensures it
         // has a URL define and that the URL is not empty.
-         it('URLs are defined and not empty', function() {
+        it('URLs are defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).not.toBe(0);
             });
-         });
+        });
 
 
         // Test that loops through each feed in the allFeeds object and ensures it has a name defined
@@ -38,7 +38,7 @@ $(function() {
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
             });
-         });
+        });
     });
 
 
