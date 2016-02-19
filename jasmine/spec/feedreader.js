@@ -47,7 +47,7 @@ $(function() {
 
         // Test that ensures the menu element is hidden by default.
         it('Menu should be hidden by default', function() {
-        expect(document.body.className).toBe('menu-hidden');
+        expect($('body').hasClass('menu-hidden')).toBeTruthy();
         });
 
         // Test that ensures the menu changes visibility when the menu icon is clicked.
@@ -56,10 +56,10 @@ $(function() {
         it('Menu should change visibility when clicked', function() {
             // On first click, menu appears and menu-hidden class is removed
             $('.menu-icon-link').trigger('click');
-            expect(document.body.className).not.toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBeFalsy();
             // On second click, menu disappears and menu-hidden class is applied
             $('.menu-icon-link').trigger('click');
-            expect(document.body.className).toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBeTruthy;
         });
     });
 
@@ -69,14 +69,13 @@ $(function() {
         // a single .entry element within the .feed container.
         // Because loadFeed() is asynchronous this test requires
         // the use of Jasmine's beforeEach and asynchronous done() function.
-         beforeEach(function(done) {
+        beforeEach(function(done) {
             loadFeed(0,done);
          });
 
-         it('Should have a least one .entry in the .feed container', function(done) {
+        it('Should have a least one .entry in the .feed container', function() {
             expect($('.feed .entry').length).toBeGreaterThan(0);
-            done();
-         });
+        });
     });
 
     // Test suite named "New Feed Selection"
