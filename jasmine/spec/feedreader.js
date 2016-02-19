@@ -59,7 +59,7 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBeFalsy();
             // On second click, menu disappears and menu-hidden class is applied
             $('.menu-icon-link').trigger('click');
-            expect($('body').hasClass('menu-hidden')).toBeTruthy;
+            expect($('body').hasClass('menu-hidden')).toBeTruthy();
         });
     });
 
