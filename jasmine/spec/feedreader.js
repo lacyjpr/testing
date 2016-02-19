@@ -83,7 +83,6 @@ $(function() {
     describe('New Feed Selection', function() {
         // Test that ensures when a new feed is loaded by the loadFeed function that the content actually changes.
         // loadFeed is asynchronous so we're using Jasmine's beforeEach and done functions again.
-
          beforeEach(function(done) {
             loadFeed(1, function() {
                 feedContent = $('.feed').html();
