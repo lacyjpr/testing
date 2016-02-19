@@ -33,7 +33,7 @@ $(function() {
 
 		// Test that loops through each feed in the allFeeds object and ensures it has a name defined
 		// and that the name is not empty.
-		 it('Defines a name for each feed that is not empty', function() {
+		it('Defines a name for each feed that is not empty', function() {
 			allFeeds.forEach(function(feed) {
 				expect(feed.name).toBeDefined();
 				expect(feed.name.length).not.toBe(0);
@@ -71,7 +71,7 @@ $(function() {
 		// the use of Jasmine's beforeEach and asynchronous done() function.
 		beforeEach(function(done) {
 			loadFeed(0,done);
-		 });
+		});
 
 		it('Should have a least one .entry in the .feed container', function() {
 			expect($('.feed .entry').length).toBeGreaterThan(0);
@@ -87,14 +87,14 @@ $(function() {
 				feedContent = $('.feed').html();
 				done();
 			});
-		 });
+		});
 
-		 it('Changes contents when a new feed is loaded', function(done) {
+		it('Changes contents when a new feed is loaded', function(done) {
 			loadFeed(0, function() {
 				expect($('.feed').html()).not.toEqual(feedContent);
 				done();
 			});
-		 });
+		});
 	});
 
 }());
